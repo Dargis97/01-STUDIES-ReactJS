@@ -7,13 +7,6 @@ function App() {
   const [count, setCount] = useState(0);
   const [space, setSpace] = useState(5);
 
-  const doBigger = () => {
-    setSpace(10);
-  };
-  const doSmaller = () => {
-    setSpace(5);
-  };
-
   const clicked = () => {
     setColor((c) => (c === 'skyblue' ? 'crimson' : 'skyblue'));
   };
@@ -38,8 +31,8 @@ function App() {
           Size change
         </button>
         <button onClick={countNumber}>Increase count</button>
-        <button onClick={doSmaller}>5px</button>
-        <button onClick={doBigger}>10px</button>
+        <button onClick={() => setSpace(5)}>5px</button>
+        <button onClick={() => setSpace(10)}>10px</button>
       </header>
     </div>
   );
