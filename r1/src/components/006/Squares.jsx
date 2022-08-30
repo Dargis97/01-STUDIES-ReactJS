@@ -14,11 +14,11 @@ function Squares() {
     ]);
   };
 
-  const getNr = (i) => {
-    setNumber(i.number);
+  const getNr = (num) => {
+    setNumber(num);
     setSq((s) =>
       s.map((square) =>
-        square.number === i.number ? { ...square, show: false } : { ...square }
+        square.number === num ? { ...square, show: false } : { ...square }
       )
     );
   };
@@ -38,12 +38,10 @@ function Squares() {
     );
   };
 
-  const resurect = (i) => {
+  const resurect = () => {
     setSq((s) =>
       s.map((square) =>
-        square.number === i.number
-          ? { ...square, show: false }
-          : { ...square, show: true }
+        square.number === number ? { ...square, show: true } : { ...square }
       )
     );
   };
@@ -85,7 +83,7 @@ function Squares() {
           n.show ? (
             <div
               key={i}
-              onClick={() => getNr(n)}
+              onClick={() => getNr(n.number)}
               style={{
                 backgroundColor: n.number < 300 ? 'black' : n.color,
 
