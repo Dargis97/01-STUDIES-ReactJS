@@ -50,9 +50,17 @@ function Text() {
           type='range'
           value={range}
           min={0}
-          max={1000}
-          step={5}
+          max={100}
         />
+        <button onClick={() => setRange((s) => (s < 10 ? 0 : Number(s) - 10))}>
+          Range -
+        </button>
+        <button
+          onClick={() => setRange((s) => (s > 90 ? 100 : Number(s) + 10))}
+        >
+          {' '}
+          Range +
+        </button>
       </div>
     </>
   );
