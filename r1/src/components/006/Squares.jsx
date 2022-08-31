@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
 import rand from '../../functions/rand';
 import randColor from '../../functions/randColor';
@@ -6,6 +7,12 @@ import randColor from '../../functions/randColor';
 function Squares() {
   const [sq, setSq] = useState([]);
   const [number, setNumber] = useState(null);
+  const [color, setColor] = useState(null);
+  const [sorting, setSort] = useState(true);
+
+  useEffect(() => {
+    setColor(randColor);
+  }, [sq]);
 
   const add = () => {
     setSq((s) => [
@@ -72,10 +79,20 @@ function Squares() {
       )
     );
   };
+  // 1 Sprendimas
+  // const sortBothSides = () => {
+  //   setSq((s) => [...s].sort((a, b) => sorting * (b.number - a.number)));
+  //   setSort((s) => s * -1);
+  // };
+  // Antras
+  const sortBothSides = () => {
+    sorting ? sort1() : sort2();
+    setSort((s) => !s);
+  };
 
   return (
     <>
-      <h1>
+      <h1 style={{ color: color }}>
         {number} State {sq.filter((s) => s.number < 300).length}
       </h1>
       <div className='container'>
@@ -106,6 +123,7 @@ function Squares() {
         <button onClick={showColored}>Show Colored</button>
         <button onClick={resurect}>Resurect</button>
         <button onClick={sortFiveElements}>Show first 5</button>
+        <button onClick={sortBothSides}>Sorting</button>
       </div>
     </>
   );
