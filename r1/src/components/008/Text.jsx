@@ -5,7 +5,7 @@ function Text() {
   const [text, setText] = useState('');
   const [color, setColor] = useState('#07FAD4');
   const [range, setRange] = useState(0);
-  const [t, showT] = useState('');
+  const [t, showT] = useState('***');
 
   const control = (e) => {
     // Number(e.target.value) && setText(e.target.value);
@@ -21,7 +21,7 @@ function Text() {
   };
 
   const showText = () => {
-    showT(text);
+    showT(text || '***');
   };
 
   return (
