@@ -3,10 +3,13 @@ import { useState } from 'react';
 import rand from '../../functions/rand';
 
 const radioData = { A: false, B: false, C: true, D: false };
+const randomData = { A: true };
 
 function Checkbox() {
   const [cb, setCb] = useState({ A: false, B: true, C: true, D: false });
   const [radio, setRadio] = useState(radioData);
+  const [checkb, setCheckb] = useState(randomData);
+  const [color, setColor] = useState('skyblue');
 
   const change = (e) => {
     const v = e.target.value;
@@ -30,6 +33,19 @@ function Checkbox() {
       r[a] = a === v ? true : false;
     }
     setRadio(r);
+  };
+
+  const changingBox = (e) => {
+    const v = e.target.value;
+
+    setCheckb((c) => ({ ...c, [v]: !c[v] }));
+  };
+  const changingColor = () => {
+    const r = {};
+    for (const a in randomData) {
+      r[a] = a === true ? setColor('crimson') : null;
+    }
+    setCheckb(r);
   };
 
   return (
@@ -134,6 +150,21 @@ function Checkbox() {
             D raide
           </label>
         </div>
+      </div>
+
+      <div className='form-container'>
+        <div style={{ backgroundColor: color }} className='box'></div>
+        <div>
+          <input
+            onChange={changingBox}
+            type='checkbox'
+            value='A'
+            id='_10'
+            checked={checkb.A}
+          />
+          <label htmlFor='_10'></label>
+        </div>
+        <button onClick={changingColor}>Press here</button>
       </div>
     </>
   );
