@@ -51,7 +51,7 @@ h2.h2 {
 }
 
 .container {
-  // display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -102,6 +102,7 @@ button {
   &:hover,
   &:focus {
     background-color: #fb8332;
+    // background-color: aquamarine;
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
   }
   &:hover {
@@ -195,5 +196,31 @@ button {
       flex-direction: column;
       background-color: #61dafb;
     }
+  }
+}
+
+.container9 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 346px;
+  height: 346px;
+  border: 3px dashed skyblue;
+  margin: 10px;
+
+  div {
+    margin: 0 5px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+  }
+  button {
+    margin: 10px;
   }
 }
