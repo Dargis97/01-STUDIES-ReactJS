@@ -1,0 +1,11 @@
+export const ADD_ONE = 1;
+export const REMOVE_ONE = 2;
+export const ADD_TWO = 3;
+export const REMOVE_TWO = 4;
+export const ADD_FIVE = 5;
+export const REMOVE_FIVE = 6;
+export const COLOR_RAND = 7;
+export const FONT_RAND = 8;
+export const BORDER_KEY = 9;
+export const SQUARES_ADD = 10;
+export const REMOVE_SQUARES = 11;
