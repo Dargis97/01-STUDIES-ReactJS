@@ -1,4 +1,9 @@
-import { BORDER_BOX, BOX_SIZE, CHANGE_COLOR } from '../constants/017Const';
+import {
+  BORDER_BOX,
+  BORDER_STYLE,
+  BOX_SIZE,
+  CHANGE_COLOR,
+} from '../constants/017Const';
 
 function Coloring(state, action) {
   let newState = { ...state };
@@ -12,6 +17,10 @@ function Coloring(state, action) {
       break;
     case BORDER_BOX:
       newState.border = action.payload;
+      break;
+
+    case BORDER_STYLE:
+      newState.borderStyle = action.payload;
       break;
 
     default:
