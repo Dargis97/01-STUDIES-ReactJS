@@ -229,8 +229,9 @@ button {
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
-  margin: 20px;
+  margin: 50px 20px 20px;
   padding: 20px;
+  position: relative;
 
   .book {
     position: relative;
@@ -262,9 +263,9 @@ button {
     }
 
     .price {
-      width: 100%;
+      width: 80%;
       display: flex;
-      justify-content: flex-start;
+      justify-content: space-between;
       align-items: center;
       font-size: 28px;
       margin: 4px 20px;
@@ -274,13 +275,74 @@ button {
 
     .types {
       position: absolute;
-      right: -1px;
-      top: -33px;
-      font-size: 15px;
-      background-color: #6495ed50;
+      right: -170px;
+      top: 200px;
+      font-size: 14px;
+      background-color: transparent;
       color: white;
       padding: 10px;
+      width: 350px;
+      transform: rotate(90deg);
+      text-align: right;
+      font-family: monospace;
     }
+  }
+  .cart {
+    position: absolute;
+    right: 80px;
+    top: -30px;
+    svg {
+      width: 50px;
+      height: 50px;
+      fill: orangered;
+      transition: all 0.5s;
+      &:hover {
+        fill: darkmagenta;
+      }
+    }
+    span {
+      position: absolute;
+      bottom: 10px;
+      left: -40px;
+    }
+    strong {
+      position: absolute;
+      bottom: 10px;
+      font-size: 80%;
+    }
+  }
+}
+
+.left {
+  position: absolute;
+  left: 80px;
+  top: -30px;
+  select {
+    width: 200px;
+    font-size: 18px;
+    padding: 5px;
+    margin: 5px 15px;
+    outline: none;
+    box-shadow: none;
+  }
+  span {
+    margin: 5px;
+    font-size: 18px;
+  }
+}
+
+.left1 {
+  position: absolute;
+  left: 400px;
+  top: -30px;
+  input {
+    width: 300px;
+    padding: 5px;
+    margin: 5px 15px;
+  }
+  span {
+    margin: 5px;
+    font-size: 18px;
   }
 }
 
