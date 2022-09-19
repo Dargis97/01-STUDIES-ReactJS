@@ -7,7 +7,6 @@ function Api1() {
 
   useEffect(() => {
     axios.get('https://jsonplaceholder.typicode.com/users').then((res) => {
-      console.log(res);
       setUsers(res.data);
     });
   }, []);
@@ -15,9 +14,13 @@ function Api1() {
   return (
     <>
       <ul>
-        {users.map((u) => (
-          <li key={u.id}>{u.name}</li>
-        ))}
+        {users
+          .sort((a, b) => a.address.city.localeCompare(b.address.city))
+          .map((u) => (
+            <li key={u.id}>
+              {u.name} - {u.address.city} - {u.company.name}
+            </li>
+          ))}
       </ul>
     </>
   );
